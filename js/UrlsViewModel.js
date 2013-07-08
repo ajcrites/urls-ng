@@ -1,7 +1,11 @@
-require(['knockout'], function (ko) {
-});
-define('UrlsViewModel', ['knockout'], function (ko) {
+define('UrlsViewModel', ['jquery', 'knockout'], function ($, ko) {
     return function () {
-        this.url = ko.observable();
+        var self = this;
+        self.url = ko.observable();
+
+        self.isValidUrl = ko.computed(function () {
+            self.url();
+            return document.getElementById('url').checkValidity();
+        });
     }
 });

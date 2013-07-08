@@ -11,10 +11,30 @@ body {
 }
 .url-container {
     display: block;
-    width: 80%;
     margin: 0 auto;
-    padding-top: 25px;
+    overflow: hidden;
 }
 #url {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+}
+.warning {
+   color: red;
+   font-weight: bold;
+   text-align: center;
+}
+.main-title {
+   text-align: center;
+   margin-top: 0;
+   padding-top: 25px;
+}
+.url-piece {
+   position: relative;
+   left: -150px;
+   transition: all .5s;
+}
+.slide-in {
+   left: 0;
 }
