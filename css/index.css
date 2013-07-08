@@ -38,3 +38,45 @@ body {
 .slide-in {
    left: 0;
 }
+.url-piece span {
+   display: inline-block;
+   padding: 2px;
+   color: white;
+   width: 150px;
+   text-shadow: 1px 1px #555;
+   box-shadow: 1px 1px #555;
+   position: relative;
+}
+.url-piece span:after {
+   position: absolute;
+   left: 100%;
+   top: 1px;
+   width: 0;
+   height: 0;
+   content: "";
+   border-top: 15px solid transparent;
+   border-bottom: 16px solid transparent;
+   border-left: 15px solid green;
+}
+.protocol {
+   background-color: red;
+}
+span.protocol:after {
+   border-left: 15px solid red;
+}
+.hostname {
+   background-color: green;
+}
+span.port {
+   background-color: yellow;
+   color: black;
+}
+.pathname {
+   background-color: purple;
+}
+.search {
+   background-color: blue;
+}
+.hash {
+   background-color: olive;
+}

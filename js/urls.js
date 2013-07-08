@@ -1,6 +1,6 @@
 require(['UrlsViewModel', 'jquery', 'knockout'],
 function (uvm, $, ko, undefined) {
-    ko.bindingHandlers.fadeVisible = {
+    ko.bindingHandlers['fadeVisible'] = {
         update: function (el, valueAccessor) {
             valueAccessor() ? $(el).fadeIn() : $(el).fadeOut();
         },
