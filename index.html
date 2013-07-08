@@ -15,7 +15,7 @@
             </div>
             <div class=url-pieces data-bind="foreach: pieces">
                <h2 class=url-piece data-bind="css: {'slide-in': valid},
-                  style: {'transition-delay': computeDelay}">
+                  transitionDelay: computeDelay()">
                   <span data-bind="text: name, attr: {class: attr}"></span>
                </h2>
                <dl><dt class=url-value></dt></dl>

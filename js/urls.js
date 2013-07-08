@@ -8,5 +8,10 @@ function (uvm, $, ko, undefined) {
             $(el).hide(valueAccessor());
         }
     };
+    ko.bindingHandlers['transitionDelay'] = {
+        update: function (el, valueAccessor) {
+            $(el).css("transition-delay", valueAccessor());
+        },
+    };
     ko.applyBindings(new uvm());
 });

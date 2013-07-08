@@ -44,7 +44,6 @@ body {
    color: white;
    width: 150px;
    text-shadow: 1px 1px #555;
-   box-shadow: 1px 1px #555;
    position: relative;
 }
 .url-piece span:after {
@@ -55,8 +54,8 @@ body {
    height: 0;
    content: "";
    border-top: 15px solid transparent;
-   border-bottom: 16px solid transparent;
-   border-left: 15px solid green;
+   border-bottom: 15px solid transparent;
+   border-left: 15px solid transparent;
 }
 .protocol {
    background-color: red;
@@ -67,16 +66,31 @@ span.protocol:after {
 .hostname {
    background-color: green;
 }
+span.hostname:after {
+   border-left: 15px solid green;
+}
 span.port {
    background-color: yellow;
    color: black;
 }
+span.port:after {
+   border-left: 15px solid yellow;
+}
 .pathname {
    background-color: purple;
+}
+span.pathname:after {
+   border-left: 15px solid purple;
 }
 .search {
    background-color: blue;
 }
+span.search:after {
+   border-left: 15px solid blue;
+}
 .hash {
    background-color: olive;
+}
+span.hash:after {
+   border-left: 15px solid olive;
 }
