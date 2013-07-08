@@ -3,6 +3,7 @@ define('UrlPiece', ['jquery', 'knockout'], function ($, ko) {
         var self = this;
         self.name = name;
         self.attr = attr;
+        self.description = 'test desc';
         self.url = url;
         self.delay = ko.observable();
         self.value = ko.computed(function () {
