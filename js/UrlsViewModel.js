@@ -12,24 +12,19 @@ define('UrlsViewModel', ['jquery', 'knockout', 'UrlPiece'], function ($, ko, Url
         self.pieces = ko.observableArray([
             new UrlPiece('Scheme', 'protocol', self.url),
             new UrlPiece('Host', 'hostname', self.url),
+            new UrlPiece('Path', 'pathname', self.url),
+            new UrlPiece('Port', 'port', self.url),
+            new UrlPiece('Query', 'search', self.url),
+            new UrlPiece('Fragment', 'hash', self.url),
         ]);
 
         self.setUrl = ko.computed(function () {
             var reverse = false;
             self.url($("#url").val());
-            reverse = !(self.isValidUrl() && self.url());
-            if (reverse) {
-               self.pieces().reverse();
-            }
             ko.utils.arrayForEach(self.pieces(), function (piece) {
-                if (piece.canSlideIn()) {
-                    piece.delay(self.delay);
-                    self.delay += 200;
-                }
+                piece.delay(self.delay);
+                self.delay += 200;
             });
-            if (reverse) {
-               self.pieces().reverse();
-            }
             self.delay = 0;
         });
     }
