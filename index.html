@@ -9,12 +9,12 @@
     <body>
         <section class=url-container>
             <h1 class=main-title>URL Analyzer</h1>
-            <input type=url id=url data-bind="value: setUrl, value: url">
+            <input type=url id=url data-bind="value: url">
             <div style="display: none;" class=warning data-bind="fadeVisible: !isValidUrl()">
                This is not a valid URL
             </div>
             <div class=url-pieces data-bind="foreach: pieces">
-               <h2 class=url-piece data-bind="text: name, css: { 'slide-in': $root.isValidUrl() && url() && canSlideIn() },
+               <h2 class=url-piece data-bind="text: name, css: {'slide-in': valid},
                   style: {'transition-delay': computeDelay}"></h2>
                <dl><dt class=url-value></dt></dl>
             </div>

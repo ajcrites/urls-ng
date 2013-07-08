@@ -16,5 +16,7 @@ define('UrlPiece', ['jquery', 'knockout'], function ($, ko) {
         self.canSlideIn = ko.computed(function () {
             return !!self.value();
         });
+        self.valid = ko.observable(false);
+        self.previousValidity = ko.observable(false);
     };
 });
