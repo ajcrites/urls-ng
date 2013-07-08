@@ -9,17 +9,15 @@
     <body>
         <section class=url-container>
             <h1 class=main-title>URL Analyzer</h1>
-            <input type=url id=url data-bind="value: url">
-            <a hidden id=url-host data-bind="attr: { href: url }"></a>
+            <input type=url id=url data-bind="value: setUrl, value: url">
             <div style="display: none;" class=warning data-bind="fadeVisible: !isValidUrl()">
                This is not a valid URL
             </div>
-            <h2 class="url-piece scheme" data-bind="css: { 'slide-in': url() && isValidUrl() }">Scheme</h2>
-            <h2 class="url-piece host" data-bind="css: { 'slide-in': url() && isValidUrl() }">Host</h2>
-            <h2 class="url-piece pathname">Path</h2>
-            <h2 class="url-piece port">Port</h2>
-            <h2 class="url-piece query">Query</h2>
-            <h2 class="url-piece fragment">Fragment</h2>
+            <div class=url-pieces data-bind="foreach: pieces">
+               <h2 class=url-piece data-bind="text: name, css: { 'slide-in': $root.isValidUrl() && url() && canSlideIn() },
+                  style: {'transition-delay': computeDelay}"></h2>
+               <dl><dt class=url-value></dt></dl>
+            </div>
         </section>
         <script src=//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.6/require.min.js></script>
         <script src=js/require.config.js></script>
