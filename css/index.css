@@ -34,6 +34,7 @@ body {
    position: relative;
    left: -150px;
    transition: all .5s;
+   margin-top: 10px;
 }
 .slide-in {
    left: 0;
@@ -93,4 +94,13 @@ span.search:after {
 }
 span.hash:after {
    border-left: 15px solid olive;
+}
+.explanation {
+   font-size: 0;
+   opacity: 0;
+   transition: all .5s;
+}
+.fade-visible {
+   font-size: 1em;
+   opacity: 1;
 }

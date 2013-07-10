@@ -3,8 +3,11 @@ define(['jquery', 'knockout'], function ($, ko) {
         var self = this;
         self.name = name;
         self.attr = attr;
+        self.description = 'test desc';
         self.url = url;
         self.delay = ko.observable();
+        self.valid = ko.observable(false);
+
         self.value = ko.computed(function () {
             var a = document.createElement('a');
             a.setAttribute('href', self.url());
@@ -13,10 +16,17 @@ define(['jquery', 'knockout'], function ($, ko) {
         self.computeDelay = ko.computed(function () {
             return self.delay() + 'ms';
         });
+        self.computeLongDelay = ko.computed(function () {
+            if (self.valid()) {
+               return (+self.delay() + 200) + 'ms';
+            }
+            else {
+               return self.computeDelay();
+            }
+        });
         self.canSlideIn = ko.computed(function () {
             return !!self.value();
         });
-        self.valid = ko.observable(false);
         self.previousValidity = ko.observable(false);
     };
 });
