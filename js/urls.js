@@ -1,4 +1,4 @@
-require(['UrlsViewModel', 'jquery', 'knockout'],
+define(['UrlsViewModel', 'jquery', 'knockout'],
 function (uvm, $, ko, undefined) {
     ko.bindingHandlers['fadeVisible'] = {
         update: function (el, valueAccessor) {
@@ -13,5 +13,9 @@ function (uvm, $, ko, undefined) {
             $(el).css("transition-delay", valueAccessor());
         },
     };
-    ko.applyBindings(new uvm());
+    return {
+       run: function () {
+           ko.applyBindings(new uvm());
+       }
+    };
 });

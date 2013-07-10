@@ -1,4 +1,4 @@
-define('UrlsViewModel', ['jquery', 'knockout', 'UrlPiece'], function ($, ko, UrlPiece) {
+define(['jquery', 'knockout', 'UrlPiece'], function ($, ko, UrlPiece) {
     return function () {
         var self = this;
         self.delay = 0;

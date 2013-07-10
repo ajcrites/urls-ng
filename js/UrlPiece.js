@@ -1,4 +1,4 @@
-define('UrlPiece', ['jquery', 'knockout'], function ($, ko) {
+define(['jquery', 'knockout'], function ($, ko) {
     return function (name, attr, url) {
         var self = this;
         self.name = name;

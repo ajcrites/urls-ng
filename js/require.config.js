@@ -5,5 +5,6 @@ require.config({
         knockout: "//cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min"
     },
 });
-require(['urls']);
-
+require(['urls'], function (app) {
+    app.run();
+});
