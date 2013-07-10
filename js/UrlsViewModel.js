@@ -1,7 +1,6 @@
 define('UrlsViewModel', ['jquery', 'knockout', 'UrlPiece'], function ($, ko, UrlPiece) {
     return function () {
         var self = this;
-        self.delay = 0;
         self.url = ko.observable();
 
         self.isValidUrl = ko.computed(function () {
