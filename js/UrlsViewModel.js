@@ -1,4 +1,5 @@
-define(['jquery', 'knockout', 'UrlPiece'], function ($, ko, UrlPiece) {
+define(['jquery', 'knockout', 'UrlPiece', 'ko-custom-bindings/fade-visible', 'ko-custom-bindings/transition-delay'],
+function ($, ko, UrlPiece) {
     return function () {
         var self = this;
         self.url = ko.observable();
