@@ -1,5 +1,5 @@
 define(['jquery', 'knockout'], function ($, ko) {
-    return function (name, attr, url) {
+    return function (name, attr, url, definition) {
         var self = this;
         self.name = name;
         self.attr = attr;
@@ -30,7 +30,7 @@ define(['jquery', 'knockout'], function ($, ko) {
         self.previousValidity = ko.observable(false);
 
         self.setDescription = function () {
-            self.description("Protocol/scheme<br>&bull;" + self.value());
+            self.description(definition + "<br>&bull; " + self.value());
         };
     };
 });

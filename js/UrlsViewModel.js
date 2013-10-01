@@ -10,12 +10,12 @@ function ($, ko, UrlPiece) {
         });
 
         self.pieces = ko.observableArray([
-            new UrlPiece('Scheme', 'protocol', self.url),
-            new UrlPiece('Host', 'hostname', self.url),
-            new UrlPiece('Port', 'port', self.url),
-            new UrlPiece('Path', 'pathname', self.url),
-            new UrlPiece('Query', 'search', self.url),
-            new UrlPiece('Fragment', 'hash', self.url),
+            new UrlPiece('Scheme', 'protocol', self.url, "Communications protocol is a system of digital rules for message exchange"),
+            new UrlPiece('Host', 'hostname', self.url, "Service that runs Internet servers that serve content to the Internet"),
+            new UrlPiece('Port', 'port', self.url, "Physical interface between computer and other devices"),
+            new UrlPiece('Path', 'pathname', self.url, "Unique location"),
+            new UrlPiece('Query', 'search', self.url, "Contains data to be passed to web applications"),
+            new UrlPiece('Fragment', 'hash', self.url, "Identifies a portion of the document"),
         ]);
 
         self.url.subscribe(function (newvalue) {
