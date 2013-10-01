@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en-US>
+<html lang=en-US ng-app=urls>
     <head>
         <title>
             URL Analyzer
@@ -7,12 +7,10 @@
         <link rel=stylesheet type=text/css href=css/index.css>
     </head>
     <body>
-        <section class=url-container>
+        <section class=url-container ng-controller=UrlsCtrl>
             <h1 class=main-title>URL Analyzer</h1>
-            <input type=url id=url data-bind="value: url" autofocus>
-            <div style="display: none;" class=warning data-bind="fadeVisible: !isValidUrl()">
-               This is not a valid URL
-            </div>
+            <input type=url id=url url-validity autofocus>
+            <div ng-hide=isValidUrl class="warning" ng-bind="'This is not a valid URL'"></div>
             <div class=url-pieces data-bind="foreach: pieces">
                <h2 class=url-piece data-bind="css: {'slide-in': valid()},
                   transitionDelay: computeDelay()">
@@ -21,7 +19,11 @@
                <div class=explanation data-bind="css: {'fade-visible': valid()}, transitionDelay: computeLongDelay(), html: description"></div>
             </div>
         </section>
-        <script src=//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.6/require.min.js></script>
-        <script src=js/require.config.js></script>
+        <script src=js/vendor/angular/angular.min.js></script>
+        <script src=js/vendor/angular-animate/angular-animate.min.js></script>
+        <script src=js/urls.js></script>
+        <script src=js/UrlsCtrl.js></script>
+        <script src=js/UrlsInputCtrl.js></script>
+        <script src=js/directives.js></script>
     </body>
 </html>
