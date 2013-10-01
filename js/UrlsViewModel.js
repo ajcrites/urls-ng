@@ -32,6 +32,9 @@ function ($, ko, UrlPiece) {
                    piece.delay(delay);
                    delay += 200;
                }
+               if (piece.valid()) {
+                   piece.setDescription();
+               }
            });
            //observableArray is mutable
            if (reverse) {

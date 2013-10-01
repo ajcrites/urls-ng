@@ -3,7 +3,7 @@ define(['jquery', 'knockout'], function ($, ko) {
         var self = this;
         self.name = name;
         self.attr = attr;
-        self.description = 'test desc';
+        self.description = ko.observable('');
         self.url = url;
         self.delay = ko.observable();
         self.valid = ko.observable(false);
@@ -28,5 +28,9 @@ define(['jquery', 'knockout'], function ($, ko) {
             return !!self.value();
         });
         self.previousValidity = ko.observable(false);
+
+        self.setDescription = function () {
+            self.description("Protocol/scheme<br>&bull;" + self.value());
+        };
     };
 });
