@@ -11,19 +11,20 @@
             <h1 class=main-title>URL Analyzer</h1>
             <input type=url id=url url-validity autofocus>
             <div ng-hide=isValidUrl class="warning" ng-bind="'This is not a valid URL'"></div>
-            <div class=url-pieces data-bind="foreach: pieces">
-               <h2 class=url-piece data-bind="css: {'slide-in': valid()},
-                  transitionDelay: computeDelay()">
-                  <span data-bind="text: name, attr: {class: attr}"></span>
-               </h2>
-               <div class=explanation data-bind="css: {'fade-visible': valid()}, transitionDelay: computeLongDelay(), html: description"></div>
+            <div class=url-pieces>
+               <div ng-repeat="piece in pieces">
+                   <h2 class=url-piece ng-class="slideIn(piece)">
+                      <span ng-bind="piece.name" ng-class="piece.attr"></span>
+                   </h2>
+                   <div class=explanation></div>
+                </div>
             </div>
         </section>
         <script src=js/vendor/angular/angular.min.js></script>
         <script src=js/vendor/angular-animate/angular-animate.min.js></script>
         <script src=js/urls.js></script>
+        <script src=js/UrlPiece.js></script>
         <script src=js/UrlsCtrl.js></script>
-        <script src=js/UrlsInputCtrl.js></script>
         <script src=js/directives.js></script>
     </body>
 </html>

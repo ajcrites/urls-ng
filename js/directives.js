@@ -3,6 +3,7 @@ urls.directive("urlValidity", function () {
         element.on("blur", function () {
             scope.$apply(function () {
                 scope.isValidUrl = element[0].checkValidity();
+                scope.url = element.val();
             });
         }).on("keyup", function (e) {
             if (e.which == 13) {
